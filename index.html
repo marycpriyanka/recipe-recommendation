@@ -20,115 +20,156 @@
         <h4 class="card-text">We provide recipe recommendations and nutrition information based on mealtype, diet, ingredients, and preparation time..</h4>
     </div>
   </div>
-
-  <main class="container pt-5">
-    <section class="row">
-      <div class="col-12 col-md-9">
-        <h2>Our Recipes</h2>
-        <section class="row justify-content-around">
-          <div class="col-12 col-sm-6 col-lg-4 mb-3">
-            <div class="card">
-              <h3 class="card-header">
-                Recipe 1
-              </h3>
-              <div class="card-body">
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
-                  quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
-                  neque,
-                  quas obcaecati laborum?
-                </p>
-                <button class="btn btn-block btn-info">Learn more.</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4 mb-3">
-            <div class="card">
-              <h3 class="card-header">
-                Recipe 2
-              </h3>
-              <div class="card-body">
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
-                  quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
-                  neque,
-                  quas obcaecati laborum?
-                </p>
-                <button class="btn btn-block btn-info">Learn more.</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4 mb-3">
-            <div class="card">
-              <h3 class="card-header">
-                Recipe 3
-              </h3>
-              <div class="card-body">
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
-                  quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
-                  neque,
-                  quas obcaecati laborum?
-                </p>
-                <button class="btn btn-block btn-info">Learn more.</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4 mb-3">
-            <div class="card">
-              <h3 class="card-header">
-                Recipe 4
-              </h3>
-              <div class="card-body">
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
-                  quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
-                  neque,
-                  quas obcaecati laborum?
-                </p>
-                <button class="btn btn-block btn-info">Learn more.</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4 mb-3">
-            <div class="card">
-              <h3 class="card-header">
-                Recipe 5
-              </h3>
-              <div class="card-body">
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
-                  quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
-                  neque,
-                  quas obcaecati laborum?
-                </p>
-                <button class="btn btn-block btn-info">Learn more.</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4 mb-3">
-            <div class="card">
-              <h3 class="card-header">
-                Recipe 6
-              </h3>
-              <div class="card-body">
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
-                  quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
-                  neque,
-                  quas obcaecati laborum?
-                </p>
-                <button class="btn btn-block btn-info">Learn more.</button>
-              </div>
-            </div>
-          </div>
-        </section>
+  <main>
+    <div class="row pt-5">
+      <div class="col">
+        <label for="diet">Diet:</label>
+        <select class="form-select" id="diet" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="1">Balanced</option>
+          <option value="2">High-fiber</option>
+          <option value="3">High-protein</option>
+          <option value="4">Low-carb</option>
+          <option value="5">Low-fat</option>  
+          <option value="5">Low-sodium</option>              
+        </select>
       </div>
-      
-      
-    </section>
+      <div class="col">
+        <label for="diet">Meal Type:</label>
+        <select class="form-select" id="Meal Type" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="1">Breakfast</option>
+          <option value="2">Dinner</option>
+          <option value="3">Lunch</option> 
+          <option value="3">Snack</option>        
+          <option value="3">Teatime</option>        
+       
+        </select>
+      </div>
+      <div class="col">
+        <label for="diet">Time Range:</label>
+        <select class="form-select" id="Meal Type" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="1">1-10 minutes</option>
+          <option value="2">10-30 minutes</option>
+          <option value="3">30-60 minutes</option> 
+          <option value="3">60+ minutes</option>             
+       
+        </select>
+      </div>
+    </div>
+    <div class="input-group mb-3 pt-3">
+      <input type="text" class="form-control" placeholder="Type one or more keywords" aria-label="Type one or more keywords" aria-describedby="button-addon2">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2">SEARCH</button>
+    </div>
+    <div class="container pt-5">
+      <section class="row">
+        <div class="col-12 col-md-9">
+          <h2>Our Recipes</h2>
+          <section class="row justify-content-around">
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+              <div class="card">
+                <h3 class="card-header">
+                  Recipe 1
+                </h3>
+                <div class="card-body">
+                  <p class="card-text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
+                    quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
+                    neque,
+                    quas obcaecati laborum?
+                  </p>
+                  <button class="btn btn-block btn-info">Learn more.</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+              <div class="card">
+                <h3 class="card-header">
+                  Recipe 2
+                </h3>
+                <div class="card-body">
+                  <p class="card-text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
+                    quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
+                    neque,
+                    quas obcaecati laborum?
+                  </p>
+                  <button class="btn btn-block btn-info">Learn more.</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+              <div class="card">
+                <h3 class="card-header">
+                  Recipe 3
+                </h3>
+                <div class="card-body">
+                  <p class="card-text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
+                    quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
+                    neque,
+                    quas obcaecati laborum?
+                  </p>
+                  <button class="btn btn-block btn-info">Learn more.</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+              <div class="card">
+                <h3 class="card-header">
+                  Recipe 4
+                </h3>
+                <div class="card-body">
+                  <p class="card-text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
+                    quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
+                    neque,
+                    quas obcaecati laborum?
+                  </p>
+                  <button class="btn btn-block btn-info">Learn more.</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+              <div class="card">
+                <h3 class="card-header">
+                  Recipe 5
+                </h3>
+                <div class="card-body">
+                  <p class="card-text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
+                    quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
+                    neque,
+                    quas obcaecati laborum?
+                  </p>
+                  <button class="btn btn-block btn-info">Learn more.</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+              <div class="card">
+                <h3 class="card-header">
+                  Recipe 6
+                </h3>
+                <div class="card-body">
+                  <p class="card-text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
+                    quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
+                    neque,
+                    quas obcaecati laborum?
+                  </p>
+                  <button class="btn btn-block btn-info">Learn more.</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        
+        
+      </section>
 
-    
+    </div> 
   </main>
 
 </body>
