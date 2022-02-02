@@ -1,14 +1,36 @@
+// Gets the HTML DOM elements
 let mainIngredientTxtE = document.getElementById("mainIngredientInput");
 let mealTypeElement = document.getElementById("MealType");
 let dietElement = document.getElementById("diet");
 let timeElement = document.getElementById("time")
 let searchButton = document.getElementById("buttonSearch");
 let errorLog = document.getElementById("errorLog");
+let favoritesElement = document.getElementById("favorites");
 
+// Add event listener for search button
 searchButton.addEventListener("click", formSubmitHandler);
 
+// Query URL variable to be used in API call
 let queryUrl;
-let favoriteRecipes = [];
+// Gets the favorite recipe list from the local storage
+let favoriteRecipes = JSON.parse(localStorage.getItem("FavoriteRecipes")) || [];
+
+showFavorites();
+
+// Displays the saved recipes in the collapsible div
+function showFavorites() {
+    // Adds a link for each item in the favorite recipe
+    for (let i = 0; i < favoriteRecipes.length; i++) {
+        let listItem = document.createElement("li");
+        let link = document.createElement("a");
+        link.textContent = favoriteRecipes[i].recipeName;
+        link.href = favoriteRecipes[i].recipeURL;
+        link.target = "_blank";
+        listItem.appendChild(link);
+
+        favoritesElement.appendChild(listItem);
+    }
+}
 
 // Handler for search recipe user form submission
 function formSubmitHandler(event) {
@@ -65,14 +87,22 @@ function saveFavoriteRecipe(recipeName, recipeUrl) {
     }
 
     // If the recipe is not there in the recipe list, it will be added to local storage
-    if (!alreadyExists)
-    {
+    if (!alreadyExists) {
         let object = {
             recipeName: recipeName,
             recipeURL: recipeUrl
         };
         favoriteRecipes.push(object);
-    
+
         localStorage.setItem("FavoriteRecipes", JSON.stringify(favoriteRecipes));
-    }  
+    }
+
+    // Adds the recipe as a link to favorites list 
+    let listItem = document.createElement("li");
+    let link = document.createElement("a");
+    link.textContent = favoriteRecipes[i].recipeName;
+    link.href = favoriteRecipes[i].recipeURL;
+    link.target = "_blank";
+    listItem.appendChild(link);
+    favoritesElement.appendChild(listItem);
 }
