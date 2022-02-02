@@ -95,14 +95,14 @@ function saveFavoriteRecipe(recipeName, recipeUrl) {
         favoriteRecipes.push(object);
 
         localStorage.setItem("FavoriteRecipes", JSON.stringify(favoriteRecipes));
-    }
 
-    // Adds the recipe as a link to favorites list 
-    let listItem = document.createElement("li");
-    let link = document.createElement("a");
-    link.textContent = favoriteRecipes[i].recipeName;
-    link.href = favoriteRecipes[i].recipeURL;
-    link.target = "_blank";
-    listItem.appendChild(link);
-    favoritesElement.appendChild(listItem);
+        // Adds the recipe as a link to favorites list 
+        let listItem = document.createElement("li");
+        let link = document.createElement("a");
+        link.textContent = recipeName;
+        link.href = recipeUrl;
+        link.target = "_blank";
+        listItem.appendChild(link);
+        favoritesElement.appendChild(listItem);
+    }
 }
