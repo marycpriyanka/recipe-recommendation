@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,51 +14,63 @@
 
 <body>
   <div class="card bg-dark text-center">
-    <img class="card-img" src="https://cdn.pixabay.com/photo/2016/11/29/08/24/bakery-1868396_960_720.jpg" alt="Card image">
+    <img class="card-img" src="https://cdn.pixabay.com/photo/2016/11/29/08/24/bakery-1868396_960_720.jpg"
+      alt="Card image">
     <div class="card-img-overlay">
-        <h1 class="card-title">Cal-it</h1>
-        <h4 class="card-text">We provide recipe recommendations and nutrition information based on mealtype, diet, ingredients, and preparation time..</h4>
+      <h1 class="card-title">Cal-it</h1>
+      <h4 class="card-text">We provide recipe recommendations and nutrition information based on mealtype, diet,
+        ingredients, and preparation time..</h4>
     </div>
   </div>
   <main>
-    <div class="row pt-5">
-      <div class="col">
-        <label for="diet">Diet:</label>
-        <select class="form-select" id="diet" aria-label="Default select example">
-          <option selected value="balanced">Balanced</option>
-          <option value="high-fiber">High-fiber</option>
-          <option value="high-protein">High-protein</option>
-          <option value="low-carb">Low-carb</option>
-          <option value="low-fat">Low-fat</option>  
-          <option value="low-sodium">Low-sodium</option>              
-        </select>
+    <div class="border border-5 rounded m-2">
+      <div class="row pt-5">
+        <div class="col">
+          <label for="diet">Diet:</label>
+          <select class="form-select" id="diet" aria-label="Default select example">
+            <option selected value="balanced">Balanced</option>
+            <option value="high-fiber">High-fiber</option>
+            <option value="high-protein">High-protein</option>
+            <option value="low-carb">Low-carb</option>
+            <option value="low-fat">Low-fat</option>
+            <option value="low-sodium">Low-sodium</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="MealType">Meal Type:</label>
+          <select class="form-select" id="MealType" aria-label="Default select example">
+            <option selected value="Breakfast">Breakfast</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Snack">Snack</option>
+            <option value="Teatime">Teatime</option>
+
+          </select>
+        </div>
+        <div class="col">
+          <label for="time">Time Range:</label>
+          <select class="form-select" id="time" aria-label="Default select example">
+            <option selected value="1-10">1-10 minutes</option>
+            <option value="10-30">10-30 minutes</option>
+            <option value="30-60">30-60 minutes</option>
+            <option value="60+">60+ minutes</option>
+
+          </select>
+        </div>
       </div>
-      <div class="col">
-        <label for="MealType">Meal Type:</label>
-        <select class="form-select" id="MealType" aria-label="Default select example">
-          <option selected value="Breakfast">Breakfast</option>
-          <option value="Dinner">Dinner</option>
-          <option value="Lunch">Lunch</option> 
-          <option value="Snack">Snack</option>        
-          <option value="Teatime">Teatime</option>        
-       
-        </select>
-      </div>
-      <div class="col">
-        <label for="time">Time Range:</label>
-        <select class="form-select" id="time" aria-label="Default select example">
-          <option selected value="1-10">1-10 minutes</option>
-          <option value="10-30">10-30 minutes</option>
-          <option value="30-60">30-60 minutes</option> 
-          <option value="60+">60+ minutes</option>             
-       
-        </select>
+      <div class="input-group mb-3 pt-3">
+        <input type="text" id="mainIngredientInput" class="form-control" placeholder="main ingredient"
+          aria-label="Type one or more keywords" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="buttonSearch">SEARCH</button>
       </div>
     </div>
-    <div class="input-group mb-3 pt-3">
-      <input type="text" id="mainIngredientInput" class="form-control" placeholder="main ingredient" aria-label="Type one or more keywords" aria-describedby="button-addon2">
-      <button class="btn btn-outline-secondary" type="button" id="buttonSearch">SEARCH</button>
+
+    <button type="button" class="btn" data-toggle="collapse" data-target="#favorites">View Saved Recipes</button>
+    <div id="favorites" class="collapse">
+      <ul></ul>
     </div>
+      
+    
 
     <section id="errorLog"></section>
 
@@ -171,6 +184,9 @@
 
     </div>  -->
   </main>
- <script src="assets/js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
+
 </html>
