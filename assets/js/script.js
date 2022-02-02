@@ -5,9 +5,9 @@ let queryUrl;
 function formSubmitHandler(event) {
     // event.preventDefault();
 
-    // API Id for Edamam API
+    // API Id for Edamam recipe search API
     let appId = "3f548913";
-    // API key for Edamam API
+    // API key for Edamam recipe search API
     let appKey = "9d558572444afeba08f4059681e7376b"
 
     let mainIngredient = "chicken";
