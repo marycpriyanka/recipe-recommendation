@@ -8,6 +8,7 @@ let errorLog = document.getElementById("errorLog");
 searchButton.addEventListener("click", formSubmitHandler);
 
 let queryUrl;
+let favoriteRecipes = [];
 
 // Handler for search recipe user form submission
 function formSubmitHandler(event) {
@@ -53,3 +54,25 @@ function displayRecipeCards(recipes) {
 
 }
 
+// Saves a recipe name and its url to local storage
+function saveFavoriteRecipe(recipeName, recipeUrl) {
+    // Checks whether the recipe name is already there in favorites list
+    let alreadyExists = false;
+    for (let i = 0; i < favoriteRecipes.length; i++) {
+        if (favoriteRecipes[i]["recipeName"] === recipeName) {
+            alreadyExists = true;
+        }
+    }
+
+    // If the recipe is not there in the recipe list, it will be added to local storage
+    if (!alreadyExists)
+    {
+        let object = {
+            recipeName: recipeName,
+            recipeURL: recipeUrl
+        };
+        favoriteRecipes.push(object);
+    
+        localStorage.setItem("FavoriteRecipes", JSON.stringify(favoriteRecipes));
+    }  
+}
