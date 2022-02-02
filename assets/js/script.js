@@ -40,4 +40,4 @@ function displayRecipeCards(recipes) {
 
 }
 
-// formSubmitHandler();
+formSubmitHandler();
