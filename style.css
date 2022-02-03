@@ -2,6 +2,16 @@ ul {
   list-style: none;
 }
 
+#favoritesSection, 
+#quote {
+  text-align: center;
+}
+
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
 @media (min-width: 576px) { 
   h1{
