@@ -6,6 +6,8 @@ let timeElement = document.getElementById("time")
 let searchButton = document.getElementById("buttonSearch");
 let errorLog = document.getElementById("errorLog");
 let favoritesElement = document.getElementById("favoriteList");
+let quote = document.getElementById("quote");
+let recipeCardSection = document.getElementById("cards");
 
 // Add event listener for search button
 searchButton.addEventListener("click", formSubmitHandler);
@@ -16,6 +18,30 @@ let queryUrl;
 let favoriteRecipes = JSON.parse(localStorage.getItem("FavoriteRecipes")) || [];
 
 showFavorites();
+getAndDisplayQuote();
+
+function getAndDisplayQuote() {
+    let queryUrl = "https://api.adviceslip.com/advice";
+    let timer = setInterval(function () {
+        fetch(queryUrl)
+            .then(function (response) {
+                if (response.ok) {
+                    return response.json();
+                }
+                else {
+                    console.log("Error: " + response.statusText);
+                }
+            })
+            .then(function (data) {
+                // console.log(data);
+                quote.textContent = data.slip.advice;
+                // console.log(data.slip.advice);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }, 10000);
+}
 
 // Displays the saved recipes in the collapsible div
 function showFavorites() {
@@ -64,16 +90,46 @@ function formSubmitHandler(event) {
             }
         })
         .then(function (data) {
-            console.log(data);
             displayRecipeCards(data.hits)
         })
         .catch(function (error) {
-            errorLog.textContent = "Unable to connect to server: " + error;
+            console.log(error);
         })
 }
 
 function displayRecipeCards(recipes) {
+    console.log(recipes);
+    for (let i = 0; i < recipes.length; i++) {
+        let name = recipes[i].recipe.label;
+        let image = recipes[i].recipe.images.SMALL.url;
+        let url = recipes[i].recipe.url;
 
+        let card = document.createElement("div");
+
+        let link = document.createElement("a");
+        let imageElement = document.createElement("img");
+        imageElement.setAttribute("src", image);
+        imageElement.setAttribute("alt", name);
+        imageElement.setAttribute("class", "card-img-top");
+        link.appendChild(imageElement);
+
+        let titleElement = document.createElement("h5");
+        titleElement.textContent = name;
+        titleElement.setAttribute("class", "card-title");
+        link.appendChild(titleElement);
+        link.setAttribute("href", url);
+        link.setAttribute("target", "_blank");
+        card.appendChild(link);
+
+        let button = document.createElement("button");
+        button.textContent = "Add to favorites";
+        card.appendChild(button);
+
+        card.setAttribute("class", "card mb-3");
+        card.setAttribute("style", "width: 18rem;");
+
+        recipeCardSection.appendChild(card);
+    }
 }
 
 // Saves a recipe name and its url to local storage
@@ -106,7 +162,6 @@ function saveFavoriteRecipe(recipeName, recipeUrl) {
         favoritesElement.appendChild(listItem);
     }
 }
-
 
 // Removes a favorite recipe from saved list
 function deleteFavoriteRecipe(recipeName) {

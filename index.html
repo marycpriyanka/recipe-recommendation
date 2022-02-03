@@ -23,6 +23,8 @@
     </div>
   </div>
   <main>
+    <p id="quote"></p>
+
     <div class="border border-5 rounded m-2">
       <div class="row pt-5">
         <div class="col">
@@ -61,20 +63,33 @@
       <div class="input-group mb-3 pt-3">
         <input type="text" id="mainIngredientInput" class="form-control" placeholder="main ingredient"
           aria-label="Type one or more keywords" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="buttonSearch">SEARCH</button>
+        <button class="btn btn-dark btn-outline-secondary" type="button" id="buttonSearch">SEARCH</button>
       </div>
     </div>
 
-    <button type="button" class="btn" data-toggle="collapse" data-target="#favorites">View Saved Recipes</button>
-    <div id="favorites" class="collapse">
-      <ul id="favoriteList"></ul>
+    <div id ="favoritesSection">
+      <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#favorites">View Saved Recipes</button>
+      <div id="favorites" class="collapse">
+        <ul id="favoriteList"></ul>
+      </div>
     </div>
+
       
     
 
     <section id="errorLog"></section>
 
-    <section id="cards"></section>
+    <section id="cards">
+
+      <!-- <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+          <h5 class="card-title">Card title</h5>
+       
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div> -->
+    </section>
+    
     <!-- <div class="container pt-5">
       <section class="row">
         <div class="col-12 col-md-9">
