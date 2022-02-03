@@ -90,6 +90,7 @@ function formSubmitHandler(event) {
             }
         })
         .then(function (data) {
+            recipeCardSection.innerHTML = "";
             displayRecipeCards(data.hits)
         })
         .catch(function (error) {
@@ -97,6 +98,7 @@ function formSubmitHandler(event) {
         })
 }
 
+// Displays the fetched recipes as cards
 function displayRecipeCards(recipes) {
     console.log(recipes);
     for (let i = 0; i < recipes.length; i++) {
@@ -123,6 +125,7 @@ function displayRecipeCards(recipes) {
 
         let button = document.createElement("button");
         button.textContent = "Add to favorites";
+        button.setAttribute("class", "btn btn-dark mt-auto");
         card.appendChild(button);
 
         card.setAttribute("class", "card mb-3");
