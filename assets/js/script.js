@@ -5,7 +5,7 @@ let dietElement = document.getElementById("diet");
 let timeElement = document.getElementById("time")
 let searchButton = document.getElementById("buttonSearch");
 let errorLog = document.getElementById("errorLog");
-let favoritesElement = document.getElementById("favorites");
+let favoritesElement = document.getElementById("favoriteList");
 
 // Add event listener for search button
 searchButton.addEventListener("click", formSubmitHandler);
@@ -106,3 +106,26 @@ function saveFavoriteRecipe(recipeName, recipeUrl) {
         favoritesElement.appendChild(listItem);
     }
 }
+
+
+// Removes a favorite recipe from saved list
+function deleteFavoriteRecipe(recipeName) {
+    // Removes the recipe from local storage
+    for (let i = 0; i < favoriteRecipes.length; i++) {
+        if (favoriteRecipes[i].recipeName === recipeName) {
+            favoriteRecipes.splice(i, 1);
+            break;
+        }
+    }
+
+    localStorage.setItem("FavoriteRecipes", JSON.stringify(favoriteRecipes));
+
+    // Removes the recipe link from the collapsible list in homeapge
+    for (let i = 0; i < favoritesElement.children.length; i++) {
+        if (favoritesElement.children[i].firstChild.textContent === recipeName) {
+            favoritesElement.removeChild(favoritesElement.children[i]);
+        }
+    }
+}
+
+
