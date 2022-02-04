@@ -2,8 +2,11 @@ ul {
   list-style: none;
 }
 
-#favoritesSection, 
-#quote {
+a {
+  text-decoration: none;
+}
+
+main {
   text-align: center;
 }
 
@@ -19,25 +22,22 @@ ul {
     padding-top: 5rem
   }
   
-  h4{
+  /* h4{
     font-weight: lighter;
     font-size: 20px;
     padding-top: 2rem
-  }
-
+  } */
 }
 
 @media (min-width: 1200px) {
-
-
   h1{
     font-size: 200px;
     padding-top: 12rem
   }
   
-  h4{
+  /* h4{
     font-weight: lighter;
     font-size: 50px;
     padding-top: 12rem
-  }
+  } */
 }

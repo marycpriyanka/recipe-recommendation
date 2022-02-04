@@ -20,6 +20,7 @@ let favoriteRecipes = JSON.parse(localStorage.getItem("FavoriteRecipes")) || [];
 showFavorites();
 getAndDisplayQuote();
 
+// Calls the AdviceSlip API and diaplays a quote every 10 sec
 function getAndDisplayQuote() {
     let queryUrl = "https://api.adviceslip.com/advice";
     let timer = setInterval(function () {
@@ -35,7 +36,6 @@ function getAndDisplayQuote() {
             .then(function (data) {
                 // console.log(data);
                 quote.textContent = data.slip.advice;
-                // console.log(data.slip.advice);
             })
             .catch(function (error) {
                 console.log(error);
