@@ -37,7 +37,7 @@ function getAndDisplayQuote() {
             })
             .then(function (data) {
                 // console.log(data);
-                quote.textContent = data.slip.advice;
+                quote.textContent = "\"" + data.slip.advice + "\"";
             })
             .catch(function (error) {
                 console.log(error);
