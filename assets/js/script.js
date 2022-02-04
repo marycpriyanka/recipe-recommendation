@@ -86,12 +86,19 @@ function formSubmitHandler(event) {
                 return response.json();
             }
             else {
-                errorLog.textContent = "Error: " + response.statusText;
+                console.log("Error: " + response.statusText);
+                errorLog.textContent = "Whoops! We have an issue. Try again later.";
             }
         })
         .then(function (data) {
             recipeCardSection.innerHTML = "";
-            displayRecipeCards(data.hits)
+            if (data.hits.length === 0) {
+                errorLog.textContent = "No recipes found";
+            }
+            else {
+                errorLog.textContent = "";
+                displayRecipeCards(data.hits)
+            }            
         })
         .catch(function (error) {
             console.log(error);
