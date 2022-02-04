@@ -11,6 +11,8 @@ let recipeCardSection = document.getElementById("cards");
 
 // Add event listener for search button
 searchButton.addEventListener("click", formSubmitHandler);
+// Add event handler for Add to favoritesbutton
+recipeCardSection.addEventListener("click", addOrDeleteFavoriteButtonClickHandler);
 
 // Query URL variable to be used in API call
 let queryUrl;
@@ -131,7 +133,13 @@ function displayRecipeCards(recipes) {
         card.appendChild(link);
 
         let button = document.createElement("button");
-        button.textContent = "Add to favorites";
+        let ifSaved = checkRecipeAlreadyInFavoriteList(name);
+        if (ifSaved) {
+            button.textContent = "Remove from favorites";
+        }
+        else {
+            button.textContent = "Add to favorites";
+        }   
         button.setAttribute("class", "btn btn-dark mt-auto");
         card.appendChild(button);
 
@@ -142,15 +150,29 @@ function displayRecipeCards(recipes) {
     }
 }
 
+// Handles the click of Add to favorites or Remove from favorites button
+function addOrDeleteFavoriteButtonClickHandler(event) {
+    if (event.target.tagName === "BUTTON") {
+        let recipeName = event.target.previousSibling.children[1].textContent;
+        let recipeUrl = event.target.previousSibling.getAttribute("href");
+    
+        if (event.target.textContent === "Add to favorites") {
+            // Adds the recipe to favorite list
+            saveFavoriteRecipe(recipeName, recipeUrl);
+            event.target.textContent = "Remove from favorites";
+        }
+        else if (event.target.textContent === "Remove from favorites") {
+            // Removes the recipe from the favorite list
+            deleteFavoriteRecipe(recipeName);
+            event.target.textContent = "Add to favorites";
+        }
+    }
+}
+
 // Saves a recipe name and its url to local storage
 function saveFavoriteRecipe(recipeName, recipeUrl) {
     // Checks whether the recipe name is already there in favorites list
-    let alreadyExists = false;
-    for (let i = 0; i < favoriteRecipes.length; i++) {
-        if (favoriteRecipes[i]["recipeName"] === recipeName) {
-            alreadyExists = true;
-        }
-    }
+    let alreadyExists = checkRecipeAlreadyInFavoriteList(recipeName);
 
     // If the recipe is not there in the recipe list, it will be added to local storage
     if (!alreadyExists) {
@@ -171,6 +193,18 @@ function saveFavoriteRecipe(recipeName, recipeUrl) {
         listItem.appendChild(link);
         favoritesElement.appendChild(listItem);
     }
+}
+
+// Checks whether the recipe name is already there in favorites list
+function checkRecipeAlreadyInFavoriteList(recipeName) {  
+    let alreadyExists = false;
+    for (let i = 0; i < favoriteRecipes.length; i++) {
+        if (favoriteRecipes[i]["recipeName"] === recipeName) {
+            alreadyExists = true;
+        }
+    }
+
+    return alreadyExists;
 }
 
 // Removes a favorite recipe from saved list
