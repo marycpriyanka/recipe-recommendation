@@ -26,4 +26,5 @@ Cal-it is a recipe search website where users can search for recipes based on li
  Displaying the nutrient information of a recipe.
  
 ## Deployed link
+https://marycpriyanka.github.io/recipe-recommendation/
 
