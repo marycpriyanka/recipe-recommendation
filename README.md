@@ -9,6 +9,7 @@ Cal-it is a recipe search website where users can search for recipes based on li
 - The user can view the recipe page of a saved recipe by clicking on the saved recipe name.
 - Once a recipe is saved, user has option to remove it from favorites. It will then be removed from favorite list.
 - An advice or quote is displayed. The quote changes and a new one gets displayed every 10 seconds.
+- The web page is mobile responsive too.
 
 ![screenshot1](https://github.com/marycpriyanka/recipe-recommendation/blob/main/assets/images/screenshots/headerScreenshot.JPG)
 
@@ -17,6 +18,9 @@ Cal-it is a recipe search website where users can search for recipes based on li
 ![screenshot3](https://github.com/marycpriyanka/recipe-recommendation/blob/main/assets/images/screenshots/screenshot3.JPG)
 
 ![screenshot4](https://github.com/marycpriyanka/recipe-recommendation/blob/main/assets/images/screenshots/screenshot4.JPG)
+
+## Technologies used
+HTML, CSS, bootstrap, JavaScript, Ajax, Responsive design
 
 ## APIs used
 - Edamam recipe search API: https://developer.edamam.com/edamam-docs-recipe-api
@@ -27,4 +31,7 @@ Cal-it is a recipe search website where users can search for recipes based on li
  
 ## Deployed link
 https://marycpriyanka.github.io/recipe-recommendation/
+
+### Contact
+marycpriyanka@gmail.com
 
