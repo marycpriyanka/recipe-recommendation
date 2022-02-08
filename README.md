@@ -1,6 +1,6 @@
 # Cal-It
 
-Cal-it is a recipe search website where users can search for recipes based on like mealtype, diet, main ingredient and cooking time. It finds recipes based on user entered criteria and displays them. Using Cal-it, a user will be able to find any recipe based on their specific needs or preparation time in a fast and convenient manner. Everyone can find a recipe that fits their schedule.  Additionally the website displays the a random quote or advice every 10 seconds to cheer you up!
+Cal-it is a recipe search website where users can search for recipes based on like mealtype, diet, main ingredient and cooking time. It finds recipes based on user entered criteria and displays them. Using Cal-it, a user will be able to find any recipe based on their specific needs or preparation time in a fast and convenient manner. Everyone can find a recipe that fits their schedule.  Additionally the website displays a random quote or advice every 10 seconds to cheer you up!
 
 ## Features
 - When the user enters the criteria and clicks on 'Search Recipe', all recipes matching the criteria will be displayed as cards containig the recipe name and its image.
