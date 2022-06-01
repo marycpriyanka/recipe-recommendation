@@ -7,6 +7,7 @@ Cal-it is a recipe search website where users can search for recipes based on me
 
 ## Table of Contents 
 
+- [Installation](#installation)
 - [Features](#features)
 - [Technologies used](#technologies-used)
 - [APIs used](#apis-used)
@@ -16,6 +17,13 @@ Cal-it is a recipe search website where users can search for recipes based on me
 - [Future development](#future-development)
 - [How to Contribute](#how-to-contribute)
 - [Questions](#questions)
+
+## Installation
+
+This program can be run through a browser using the link to the deployed application. Alternatively, to run this application locally you will need to:
+
+- Clone this repository to receive all of the files.
+- Open the index.html file in your default browser.
 
 ## Features
 
