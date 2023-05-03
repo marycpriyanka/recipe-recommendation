@@ -27,7 +27,7 @@ This program can be run through a browser using the link to the deployed applica
 
 ## Features
 
-- When the user enters the criteria and clicks on 'Search Recipe', all recipes matching the criteria will be displayed as cards containig the recipe name and its image.
+- When the user enters the criteria and clicks on 'Search Recipe', all recipes matching the criteria will be displayed as cards containing the recipe name and its image.
 - The user can view the recipe by clicking on either the recipe name or image.
 - The user can add a recipe to favorites. It will be saved to local storage and can be viewed as saved recipes by clicking on 'Show saved recipes' button. 
 - The user can view the recipe page of a saved recipe by clicking on the saved recipe name.
